@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 var pl = fmt.Println
 
 func main() {
-	pl(reflect.TypeOf(25))
-	pl(reflect.TypeOf(3.14))
-	pl(reflect.TypeOf(true))
-	pl(reflect.TypeOf("Hello"))
-	pl(reflect.TypeOf("🦍"))
+	//キャスト
+	cV1 := 1.5
+	cV2 := int(cV1)
+	pl(cV2) //1
+
+	cV3 := "50000"
+	cV4, err := strconv(cV3)
+	pl(cV4, err)
 }
